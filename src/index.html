@@ -22,7 +22,7 @@
 					</div>
 					<div class="col-3 mb-3">
 						<label for="inputCEP" class="form-label">CEP</label>
-						<input type="text" class="form-control" id="inputCEP">
+						<input type="text" class="form-control" id="inputCEP" onblur="searchCEP(this.value);">
 					</div>
 					<div class="col-10 mb-3">
 						<label for="inputAddress" class="form-label">Endereço</label>
@@ -45,7 +45,7 @@
 						<input type="text" class="form-control" id="inputState" disabled>
 					</div>
 				</div>
-				<button type="button" class="col-1 mx-auto btn btn-secondary">Salvar</button>
+				<button type="button" class="col-1 mx-auto btn btn-secondary" onclick="insertDataByCEP();">Salvar</button>
 			</form>
 		</section>
 	</main>
