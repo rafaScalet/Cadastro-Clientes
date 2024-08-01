@@ -1,3 +1,5 @@
+$('#inputCEP').mask('99999-999');
+
 // quando chamada declara todos os valores do inputs como '', exceto quando (onlyCEP) for true
 function cleanUp (onlyCEP) {
 	if (onlyCEP) {
