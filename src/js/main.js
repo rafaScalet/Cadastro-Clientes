@@ -22,7 +22,16 @@ function getValues () {
 function cleanUp (onlyCEP) {
 	if (onlyCEP) {
 		document.getElementById('inputCEP').value = '';
+		return
 	};
+	document.getElementById('inputName').value = '';
+	document.getElementById('inputSurname').value = '';
+	document.getElementById('inputCEP').value = '';
+	document.getElementById('inputAddress').value = '';
+	document.getElementById('inputNumber').value = '';
+	document.getElementById('inputNeighborhood').value = '';
+	document.getElementById('inputCity').value = '';
+	document.getElementById('inputState').value = '';
 };
 
 function searchCEP (CEPValue) {
@@ -60,6 +69,7 @@ function save () {
 	const data = getValues();
 	clients.push(data);
 	newRow(data);
+	cleanUp();
 };
 
 function newRow (clients) {
