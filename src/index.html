@@ -10,7 +10,7 @@
 	<header class="display-6 text-center my-3">Cadastro de Clientes:</header>
 	<main class="container card border border-0 shadow p-5">
 		<section>
-			<form class="row" onsubmit="save(); return false">
+			<form class="row mb-5" onsubmit="save(); return false">
 				<div class="row">
 					<div class="col-6 mb-3">
 						<label for="inputName" class="form-label">Nome</label>
@@ -47,6 +47,22 @@
 				</div>
 				<button type="submit" class="col-1 mx-auto btn btn-secondary">Salvar</button>
 			</form>
+		</section>
+		<section>
+			<table class="table mt-5" id="tableClients">
+				<thead>
+					<tr>
+						<th scope="col">#</th>
+						<th scope="col">Nome Completo</th>
+						<th scope="col">Endereço</th>
+						<th scope="col">CEP</th>
+						<th scope="col">Bairro</th>
+						<th scope="col">Cidade</th>
+						<th scope="col">Estado</th>
+					</tr>
+				</thead>
+				<tbody></tbody>
+			</table>
 		</section>
 	</main>
 	<script src="./js/jquery-3.6.0.min.js"></script>
