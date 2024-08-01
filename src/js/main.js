@@ -1,5 +1,22 @@
 $('#inputCEP').mask('99999-999');
 
+const clients = [];
+
+function getValues () {
+	const data = {
+		name: document.getElementById('inputName').value,
+		surname: document.getElementById('inputSurname').value,
+		CEP: document.getElementById('inputCEP').value,
+		address: document.getElementById('inputAddress').value,
+		number: document.getElementById('inputNumber').value,
+		neighborhood: document.getElementById('inputNeighborhood').value,
+		city: document.getElementById('inputCity').value,
+		state: document.getElementById('inputState').value
+	};
+
+	return data;
+}
+
 // quando chamada declara todos os valores do inputs como '', exceto quando (onlyCEP) for true
 function cleanUp (onlyCEP) {
 	if (onlyCEP) {
@@ -38,3 +55,10 @@ function insertDataByCEP (data) {
 	document.getElementById('inputState').value = data.uf;
 	document.getElementById('inputNumber').disabled = false;
 };
+
+function save () {
+	const data = getValues();
+	console.log(data);
+	clients.push(data);
+	console.log(clients);
+}
