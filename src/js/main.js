@@ -4,6 +4,7 @@ const clients = [];
 
 function getValues () {
 	const data = {
+		id: clients.length + 1,
 		name: document.getElementById('inputName').value,
 		surname: document.getElementById('inputSurname').value,
 		CEP: document.getElementById('inputCEP').value,
@@ -61,4 +62,32 @@ function save () {
 	console.log(data);
 	clients.push(data);
 	console.log(clients);
+	newRow(data);
+}
+
+function newRow (clients) {
+	const table = document.getElementById('tableClients');
+  const newRow = table.insertRow();
+
+  const idCell = newRow.insertCell();
+  idCell.appendChild(document.createTextNode(clients.id));
+
+  const completeNameCell = newRow.insertCell();
+  completeNameCell.appendChild(document.createTextNode(`${clients.name} ${clients.surname}`));
+
+  const CEPCell = newRow.insertCell();
+  CEPCell.appendChild(document.createTextNode(clients.CEP));
+
+  const addressCell = newRow.insertCell();
+  addressCell.appendChild(document.createTextNode(`${clients.address} ${clients.number}`));
+
+  const neighborhoodCell = newRow.insertCell();
+  neighborhoodCell.appendChild(document.createTextNode(clients.neighborhood));
+
+  const cityCell = newRow.insertCell();
+  cityCell.appendChild(document.createTextNode(clients.city));
+
+  const stateCell = newRow.insertCell();
+  stateCell.appendChild(document.createTextNode(clients.state));
+
 }
