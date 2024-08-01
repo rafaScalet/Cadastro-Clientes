@@ -7,7 +7,48 @@
 	<title>Cadastro-Clientes</title>
 </head>
 <body>
-
+	<header class="display-6 text-center my-3">Cadastro de Clientes:</header>
+	<main class="container">
+		<section>
+			<form class="card border border-0 p-5 shadow">
+				<div class="row">
+					<div class="col-6 mb-3">
+						<label for="inputName" class="form-label">Nome</label>
+						<input type="text" class="form-control" id="inputName">
+					</div>
+					<div class="col-6 mb-3">
+						<label for="inputSurname" class="form-label">Sobrenome</label>
+						<input type="text" class="form-control" id="inputSurname">
+					</div>
+					<div class="col-3 mb-3">
+						<label for="inputCEP" class="form-label">CEP</label>
+						<input type="text" class="form-control" id="inputCEP">
+					</div>
+					<div class="col-10 mb-3">
+						<label for="inputAddress" class="form-label">Endereço</label>
+						<input type="text" class="form-control" id="inputAddress" disabled>
+					</div>
+					<div class="col-2 mb-3">
+						<label for="inputNumber" class="form-label">Número</label>
+						<input type="number" class="form-control" id="inputNumber" disabled>
+					</div>
+					<div class="col-6 mb-3">
+						<label for="inputNeighborhood" class="form-label">Bairro</label>
+						<input type="text" class="form-control" id="inputNeighborhood" disabled>
+					</div>
+					<div class="col-6 mb-3">
+						<label for="inputCity" class="form-label">Cidade</label>
+						<input type="text" class="form-control" id="inputCity" disabled>
+					</div>
+					<div class="col-2 mb-3">
+						<label for="inputState" class="form-label">Estado</label>
+						<input type="text" class="form-control" id="inputState" disabled>
+					</div>
+				</div>
+				<button type="button" class="col-1 mx-auto btn btn-secondary">Salvar</button>
+			</form>
+		</section>
+	</main>
 	<script src="./js/main.js"></script>
 	<script src="./js/jquery-3.6.0.min.js"></script>
 	<script src="./js/jquery.mask.min.js"></script>
