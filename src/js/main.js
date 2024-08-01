@@ -45,7 +45,6 @@ function searchCEP (CEPValue) {
 		};
 
 		insertDataByCEP(data);
-		console.log(data);
 	});
 };
 
@@ -59,11 +58,9 @@ function insertDataByCEP (data) {
 
 function save () {
 	const data = getValues();
-	console.log(data);
 	clients.push(data);
-	console.log(clients);
 	newRow(data);
-}
+};
 
 function newRow (clients) {
 	const table = document.getElementById('tableClients');
@@ -89,5 +86,4 @@ function newRow (clients) {
 
   const stateCell = newRow.insertCell();
   stateCell.appendChild(document.createTextNode(clients.state));
-
-}
+};
