@@ -1,7 +1,10 @@
+// aplica mascaras para o elemento que tenha o id == inputCEP
 $('#inputCEP').mask('99999-999');
 
+// inicializa um array vazio de clientes
 const clients = [];
 
+// função que, quando chamada, retorna um objeto data, como todos os valores de todos os inputs, incluindo o id
 function getValues () {
 	const data = {
 		id: clients.length + 1,
@@ -34,6 +37,7 @@ function cleanUp (onlyCEP) {
 	document.getElementById('inputState').value = '';
 };
 
+//função que faz a busca do cep pela api
 function searchCEP (CEPValue) {
 	// remove qualquer carácter que não seja um número do CEP.
 	const CEP = CEPValue.replace(/\D/g, '');
@@ -57,6 +61,7 @@ function searchCEP (CEPValue) {
 	});
 };
 
+// coloca os valores de data (usado no método acima) nos values de cada input
 function insertDataByCEP (data) {
 	document.getElementById('inputAddress').value = data.logradouro;
 	document.getElementById('inputNeighborhood').value = data.bairro;
@@ -65,18 +70,31 @@ function insertDataByCEP (data) {
 	document.getElementById('inputNumber').disabled = false;
 };
 
+// função chamada pelo botão salvar
 function save () {
+	//define uma constante data com os valores recebidos da função getValues
 	const data = getValues();
+
+	// adiciona os valores do constante ao array de clients
 	clients.push(data);
+
+	// função para adicionar uma linha a tabela com os valores da constante data
 	newRow(data);
+
+	// limpa todos os inputs
 	cleanUp();
 };
 
+
+// função que cria uma nova linha na tabela, recebe como para clients, passado pelo método acima
 function newRow (clients) {
+	// constantes para facilitar a manipulação da tabela
 	const table = document.getElementById('tableClients');
   const newRow = table.insertRow();
 
+	// cria uma constante para cada célula da tabela
   const idCell = newRow.insertCell();
+	// cria um nó de texto para cada item dentro de clients, e adiciona ele a célula da tabela
   idCell.appendChild(document.createTextNode(clients.id));
 
   const completeNameCell = newRow.insertCell();
