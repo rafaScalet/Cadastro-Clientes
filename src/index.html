@@ -14,35 +14,35 @@
 				<div class="row">
 					<div class="col-6 mb-3">
 						<label for="inputName" class="form-label">Nome</label>
-						<input type="text" class="form-control" id="inputName">
+						<input type="text" class="form-control" id="inputName" required>
 					</div>
 					<div class="col-6 mb-3">
 						<label for="inputSurname" class="form-label">Sobrenome</label>
-						<input type="text" class="form-control" id="inputSurname">
+						<input type="text" class="form-control" id="inputSurname" required>
 					</div>
 					<div class="col-3 mb-3">
 						<label for="inputCEP" class="form-label">CEP</label>
-						<input type="text" class="form-control" id="inputCEP" onblur="searchCEP(this.value);">
+						<input type="text" class="form-control" id="inputCEP" onblur="searchCEP(this.value);" required>
 					</div>
 					<div class="col-10 mb-3">
 						<label for="inputAddress" class="form-label">Endereço</label>
-						<input type="text" class="form-control" id="inputAddress" disabled>
+						<input type="text" class="form-control" id="inputAddress" disabled required>
 					</div>
 					<div class="col-2 mb-3">
 						<label for="inputNumber" class="form-label">Número</label>
-						<input type="number" class="form-control" id="inputNumber" disabled>
+						<input type="number" class="form-control" id="inputNumber" disabled required>
 					</div>
 					<div class="col-6 mb-3">
 						<label for="inputNeighborhood" class="form-label">Bairro</label>
-						<input type="text" class="form-control" id="inputNeighborhood" disabled>
+						<input type="text" class="form-control" id="inputNeighborhood" disabled required>
 					</div>
 					<div class="col-6 mb-3">
 						<label for="inputCity" class="form-label">Cidade</label>
-						<input type="text" class="form-control" id="inputCity" disabled>
+						<input type="text" class="form-control" id="inputCity" disabled required>
 					</div>
 					<div class="col-2 mb-3">
 						<label for="inputState" class="form-label">Estado</label>
-						<input type="text" class="form-control" id="inputState" disabled>
+						<input type="text" class="form-control" id="inputState" disabled required>
 					</div>
 				</div>
 				<button type="submit" class="col-1 mx-auto btn btn-secondary">Salvar</button>
