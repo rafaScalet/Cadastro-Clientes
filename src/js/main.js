@@ -39,6 +39,8 @@ function cleanUp (onlyCEP) {
 
 //função que faz a busca do cep pela api
 function searchCEP (CEPValue) {
+
+	const errorMsg = document.querySelector('.text-danger');
 	// remove qualquer carácter que não seja um número do CEP.
 	const CEP = CEPValue.replace(/\D/g, '');
 	// expressão regular para validar o CEP
@@ -47,14 +49,14 @@ function searchCEP (CEPValue) {
 	// se o CEP não for informado ou for inválido(tendo menos de 8 dígitos), lança um alerta e encerra a função
 	if (!CEP || !validation.test(CEP)) {
 		cleanUp(true);
-		return alert('CEP inválido');
+		return errorMsg.innerHTML = 'Cep inválido'
 	};
 
 	// faz um request para a API para receber os dados do CEP enviado, e retorna como um objeto js
 	fetch(`https://viacep.com.br/ws/${CEP}/json/`).then(response => response.json()).then(data => {
 		if (data.erro == 'true') {
 			cleanUp(true);
-			return alert('CEP não encontrado');
+			return errorMsg.innerHTML = 'Cep não encontrado'
 		};
 
 		insertDataByCEP(data);
